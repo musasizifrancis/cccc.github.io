@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uganda People's Congress (UPC)</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 24px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-red {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .btn-red:hover {
+            background-color: #d32f2f;
+        }
+
+        .btn-blue {
+            background-color: #3f51b5;
+            color: white;
+        }
+
+        .btn-blue:hover {
+            background-color: #303f9f;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #3f51b5;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 70px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+            padding: 5px 15px;
+        }
+
+        nav ul li a.active {
+            background-color: #f44336;
+        }
+
+        /* Hero section - Updated with new image */
+        .hero {
+            position: relative;
+            color: white;
+            padding: 80px 0;
+            overflow: hidden;
+            background-color: rgba(244, 67, 54, 0.3); /* Light red overlay */
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            margin-bottom: 25px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better text readability */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Social links */
+        .social-links {
+            background-color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 150px;
+            padding: 8px 0;
+            margin: 0 5px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .facebook {
+            background-color: #3b5998;
+        }
+
+        .twitter {
+            background-color: #1da1f2;
+        }
+
+        .tiktok {
+            background-color: #ff0050;
+        }
+
+        /* UPC Roots section */
+        .upc-roots {
+            padding: 40px 0;
+            background-color: #f5f5f5;
+        }
+
+        .roots-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .roots-image {
+            flex: 1;
+            min-width: 250px;
+            border: 2px solid #ccc;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .roots-text {
+            flex: 3;
+            min-width: 300px;
+        }
+
+        .roots-text h2 {
+            color: #3f51b5;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .roots-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* Why Associate section */
+        .why-associate {
+            background-color: #3f51b5;
+            color: white;
+            padding: 40px 0;
+        }
+
+        .why-associate h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .why-associate p {
+            margin-bottom: 15px;
+        }
+
+        .text-center {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        /* Latest News section */
+        .latest-news {
+            padding: 40px 0;
+            background-color: white;
+        }
+
+        .latest-news h2 {
+            text-align: center;
+            color: #3f51b5;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .news-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .news-item {
+            border: 1px solid #ddd;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .news-image {
+            border: 2px solid #ddd;
+            padding: 5px;
+        }
+
+        .news-content {
+            padding: 15px;
+        }
+
+        .news-content h3 {
+            color: #3f51b5;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .news-content p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Donation section */
+        .donation {
+            background-color: #f44336;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .donation h2 {
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .donation-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .donation-btn {
+            background-color: white;
+            color: #f44336;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contribute-btn {
+            background-color: white;
+            color: #f44336;
+            font-weight: bold;
+            padding: 8px 15px;
+            border: 2px solid white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Footer section */
+        .footer {
+            padding: 40px 0;
+            background-color: #f5f5f5;
+            position: relative;
+        }
+
+        /* Added background image with opacity */
+        .footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('file:///C:/Users/musas/Desktop/Uganda%20PP/images/inter.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15; /* Reduced opacity */
+            z-index: 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            position: relative;
+            z-index: 1; /* Ensure content is above the background */
+        }
+
+        .footer-left {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .footer-right {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .footer-box {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            /* Added some transparency to the boxes */
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-box h3.red {
+            color: #f44336;
+        }
+
+        .footer-box h3.blue {
+            color: #3f51b5;
+        }
+
+        .footer-box p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .social-links a {
+                width: 100px;
+                margin-bottom: 10px;
+            }
+
+            .roots-content, .news-grid, .footer-content {
+                flex-direction: column;
+            }
+
+            .news-item {
+                max-width: 100%;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo"> <img src="file:///C:/Users/musas/Desktop/Uganda%20PP/images/ppc.png"
+              alt="UPC Logo"> </div>
+          <nav>
+            <ul>
+              <li><a href="index.htm" class="active">HOME</a></li>
+              <li><a href="about/upc%20role%20in%20the%20removal%20of%20idi%20amin.htm">ABOUT</a></li>
+              <li><a href="about/the%20neo-democracy%20in%20uganda.htm">the
+                  neo-democracy in uganda</a></li>
+              <li><a href="about/mukura%20massacre.htm">CURRENT</a></li>
+              <li><a href="news/upcroots.html?DocumentID=1899">HISTORY</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section with New Image -->
+    <section class="hero"> <img class="hero-bg" src="file:///C:/Users/musas/Desktop/Uganda%20PP/images/ppp.png"
+        alt="UPC Rally">
+      <div class="container">
+        <div class="hero-content">
+          <h1>JIMMY AKENA</h1>
+          <h1>Uniting Together for a better Uganda</h1>
+          <a href="news/upcroots.html?DocumentID=1899" class="btn btn-red">READ
+            MORE</a> </div>
+      </div>
+    </section>
+    <!-- Social Media Links -->
+    <section class="social-links">
+      <div class="container"> <a href="#" class="facebook">FACEBOOK</a> <a href="#"
+          class="twitter">TWITTER</a> <a href="#" class="tiktok">TIKTOK</a> </div>
+    </section>
+    <!-- UPC Roots Section -->
+    <section class="upc-roots">
+      <div class="container">
+        <div class="roots-content">
+          <div class="roots-image"> <img src="file:///C:/Users/musas/Desktop/Uganda%20PP/images/bbb.png"
+              alt="Historical Leader"> </div>
+          <div class="roots-text">
+            <h2>UPC ROOTS</h2>
+            <p>The roots of Uganda People's Congress (UPC) can be traced to the
+              Uganda National Congress (UNC), which was formed in 1952 under the
+              leadership of Ignatius Musazi; the UNC emerged out of Uganda
+              African Farmers Union (UAFU), which was a movement of small holder
+              farmers agitated for better prices of coffee and cotton. At the
+              time, the main economic and political activities were concentrated
+              in Buganda and naturally the leadership of the day.</p>
+            <p>At the time, the main economic and political activities were
+              concentrated in Buganda and naturally the leadership of the day.
+              With time, the Baganda lost out on the political leadership
+              because they lacked the local base and support of Mengo
+              established. This, therefore, changed the ethnic and character of</p>
+            <a href="#" class="btn btn-red">READ MORE</a> </div>
+        </div>
+      </div>
+    </section>
+    <!-- Why Associate Section -->
+    <section class="why-associate">
+      <div class="container">
+        <h2>WHY ASSOCIATE WITH UPC?</h2>
+        <p>The roots of Uganda People's Congress (UPC) can be traced to the
+          Uganda National Congress (UNC), which was formed in 1952 under the
+          leadership of Ignatius Musazi; the UNC emerged out of Uganda African
+          Farmers Union (UAFU) which was a movement of small holder farmers
+          agitated for better prices of coffee and cotton. At the time, the main
+          economic and political activities were concentrated in Buganda and
+          naturally the leadership of the day.</p>
+        <p>At the time, the main economic and political activities were
+          concentrated in Buganda and naturally the leadership of the day. With
+          time, the Baganda lost out on the political leadership because they
+          lacked the local base and support of Mengo established. This,
+          therefore, changed the ethnic and character of the leadership of the
+          Party.</p>
+        <div class="text-center"> <a href="#" class="btn btn-red">READ MORE</a>
+        </div>
+      </div>
+    </section>
+    <!-- Latest News Section -->
+    <section class="latest-news">
+      <div class="container">
+        <h2>LATEST NEWS</h2>
+        <div class="news-grid">
+          <!-- News Item 1 -->
+          <div class="news-item">
+            <div class="news-image"> <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/akena.jpg-BeFj0IzHiXmpsvi2EskQ4MIi0Jdp9w.jpeg"
+                alt="News Image"> </div>
+            <div class="news-content">
+              <h3>UPC launches nationwide mobilization campaign ahead of 2026
+                polls</h3>
+              <p>The Uganda People's Congress (UPC) has launched a nationwide
+                mobilization campaign in preparation for the 2025/2026 general
+                elections.</p>
+              <p>Speaking to the media at party headquarters in</p>
+              <a href="#" class="btn btn-red">READ MORE</a> </div>
+          </div>
+          <!-- News Item 2 -->
+          <div class="news-item">
+            <div class="news-image"> <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/akena.jpg-BeFj0IzHiXmpsvi2EskQ4MIi0Jdp9w.jpeg"
+                alt="News Image"> </div>
+            <div class="news-content">
+              <h3>UPC launches nationwide mobilization campaign ahead of 2026
+                polls</h3>
+              <p>The Uganda People's Congress (UPC) has launched a nationwide
+                mobilization campaign in preparation for the 2025/2026 general
+                elections.</p>
+              <p>Speaking to the media at party headquarters in</p>
+              <a href="#" class="btn btn-red">READ MORE</a> </div>
+          </div>
+          <!-- News Item 3 -->
+          <div class="news-item">
+            <div class="news-image"> <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/akena.jpg-BeFj0IzHiXmpsvi2EskQ4MIi0Jdp9w.jpeg"
+                alt="News Image"> </div>
+            <div class="news-content">
+              <h3>UPC launches nationwide mobilization campaign ahead of 2026
+                polls</h3>
+              <p>The Uganda People's Congress (UPC) has launched a nationwide
+                mobilization campaign in preparation for the 2025/2026 general
+                elections.</p>
+              <p>Speaking to the media at party headquarters in</p>
+              <a href="#" class="btn btn-red">READ MORE</a> </div>
+          </div>
+        </div>
+        <div class="text-center"> <a href="#" class="btn btn-blue">SEE ALL</a>
+        </div>
+      </div>
+    </section>
+    <!-- Donation Section -->
+    <section class="donation">
+      <div class="container">
+        <h2>DONATE TO SUPPORT THE PARTY &amp; CAUSE</h2>
+        <div class="donation-options"> <button class="donation-btn">10K</button>
+          <button class="donation-btn">50K</button> <button class="donation-btn">100K</button>
+          <button class="donation-btn">500K</button> <button class="contribute-btn">CONTRIBUTE</button>
+        </div>
+      </div>
+    </section>
+    <!-- Footer Section with Background Image -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-left">
+            <div class="footer-box">
+              <h3 class="red">Why Us?</h3>
+              <p><strong>Join The Crowd, Be United!</strong></p>
+              <p>The roots of Uganda People's Congress (UPC) can be traced to
+                the Uganda National Congress (UNC) which was formed in 1952
+                under the leadership of Ignatius Musazi.</p>
+              <img src="file:///C:/Users/musas/Desktop/Uganda%20PP/images/akena.jpg"
+                alt="Footer Image"> </div>
+          </div>
+          <div class="footer-right">
+            <div class="footer-box">
+              <h3 class="blue">Why Us?</h3>
+            </div>
+            <div class="footer-box">
+              <h3 class="blue">Future Party Plans</h3>
+            </div>
+            <div class="footer-box">
+              <h3 class="blue">Past Achievements</h3>
+            </div>
+            <div class="footer-box">
+              <h3 class="blue">Members</h3>
+            </div>
+            <div class="footer-box">
+              <h3 class="blue">Party Organ</h3>
+            </div>
+            <div class="footer-box">
+              <h3 class="blue">Vote For Us</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
